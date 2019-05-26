@@ -3,13 +3,13 @@
 </div>
 
 
-## What is Etherclear
+## What is Etherclear?
 
 > A self-escrow to get your funds back, for safer P2P Ethereum transactions
 
-Etherclear is a way to protext Ethereum users from sending ether and ERC-20 tokens irreversibly to the wrong address.
+Etherclear is a way to protect Ethereum users from sending ether and ERC-20 tokens irreversibly to the wrong address.
 
-It shouldn’t be stressful to send tokens to an address you don’t know. Plenty of people have lost their tokens by accidentally pasting or typing the wrong address. It bothers us that this is such an easy and irreversible mistake to make with cryptocurrencies in general. 
+Plenty of people have lost their tokens by accidentally pasting or typing the wrong address. It shouldn’t be stressful to send tokens to an address you don’t know. It bothers us that this is such an easy and irreversible mistake to make with cryptocurrencies in general. 
 
 We don’t yet know a good way to prevent this for every cryptocurrency. But we had to start somewhere, so we came up with a basic solution for P2P transactions in Ethereum, in the hope that we can prevent this happening to our ETH or ERC-20 tokens.
 
@@ -17,7 +17,7 @@ Here’s how this particular solution works. Etherclear uses a smart contract as
 
 The hash check works as follows: when the dapp sends funds into the contract, it also stores a hash `keccak256(passphrase, recipient)` in the contract state. Of course, this hash is done on the client side, so the passphrase itself is not exposed publicly. When the recipient submits a transaction to retrieve funds, they enter the passphrase. The stored hash is compared against `keccak256(entered_passphrase, recipient)`, to confirm that the recipient sent the correct passphrase.
 
-*Note: that Etherclear requires a secure communication channel to send the passphrase. This would ideally be an encrypted email or chat service.*
+*Note: Etherclear requires a secure communication channel to send the passphrase. This would ideally be an encrypted email or chat service.*
 
 ## How To Use:
 
@@ -33,7 +33,7 @@ The sender can also specify a **hold time**, which acts as an *available time wi
 Etherclear’s targeted use cases are transferring large amounts in between your own wallets, and for large P2P payments to people you don’t know that well (and so you can’t be confident the address they gave you is correct). You can think of it as a kind of secondary authentication of an ETH address, double checking the recipient’s identity through the communication channel.
 
 ### User Guide
-If you are still having questions on using Etherclear please see the [in depth users guide, here](https://docs.google.com/document/d/1UEobbwmL78Yhy6vjY4yGEdYThFIiHOieujM5TfM1dp4/edit)
+For a step by step guide to using Etherclear please see the [in depth users guide, here](https://docs.google.com/document/d/1UEobbwmL78Yhy6vjY4yGEdYThFIiHOieujM5TfM1dp4/edit).
 
 
 ## Usability Features/Road Map
@@ -51,18 +51,17 @@ We’re fans of ENS and its ability to provide clear human readable names for ad
 - Request for payment
 - Subdomain provisioning
 
-
-
-
 ## Security
-When requesting to retrieve funds one must:
+A request to receive funds must:
 1. Be signed by the address that the sender specified.
-2. Contain a valid passphrase that passes hash check.
+2. Contain a valid passphrase that passes the hash check.
 
-The security of the method you use to communicate the passphrase to the recipient is **also** important.
+These conditions are enforced by the Etherclear smart contract.
+
+The security of the method you use to communicate the passphrase to the recipient is also important. We recommend you use an encrypted chat or email service like WhatsApp, ProtonMail, or Signal.
 
 ## Disadvantages
-### Sending Token To Centralized Exchanges
+### Sending Tokens To Centralized Exchanges
 
 This solution doesn’t work for sending tokens to centralized exchanges, because the recipient has to make a transaction to withdraw the funds to their account, and exchanges control the keys necessary to sign that transaction. This is not something exchanges would be willing to do. **However, if you send to an exchange address accidentally using Etherclear, you can always cancel and withdraw your money if you’re willing to pay the gas fee (that’s the point of the dapp)**. 
 
