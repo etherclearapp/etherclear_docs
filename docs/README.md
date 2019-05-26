@@ -61,17 +61,17 @@ These conditions are enforced by the Etherclear smart contract.
 The security of the method you use to communicate the passphrase to the recipient is also important. We recommend you use an encrypted chat or email service like WhatsApp, ProtonMail, or Signal.
 
 ## Disadvantages
-### Sending Tokens To Centralized Exchanges
+### Sending tokens to centralized exchanges
 
 This solution doesn’t work for sending tokens to centralized exchanges, because the recipient has to make a transaction to withdraw the funds to their account, and exchanges control the keys necessary to sign that transaction. This is not something exchanges would be willing to do. **However, if you send to an exchange address accidentally using Etherclear, you can always cancel and withdraw your money if you’re willing to pay the gas fee (that’s the point of the dapp)**. 
 
 We’re hoping that this limitation won’t be as much of an issue when DEXs gain more traction, since the user interacts with them directly. We’re aware that many more people have the problem of sending funds to the wrong  exchange address rather than to the wrong person, so we’d love to hear any ideas about implementing something like this for exchanges.
 
-### Communication Channel Needs To Be Secure
+### Communication channel needs to be secure
 
 The communication channel has to be secure. This could potentially be an issue for users who aren’t security minded, or don’t know how to find a secure and trustworthy service. We hope that with the multiple encrypted chat and email solutions available today, this limitation won’t prevent users from using the app securely.
 
-### User Must Trust Smart Contract
+### User must trust smart contract
 
 The user needs to place trust in the smart contract. To help make that less of an issue, we’ve published the smart contract and site code for anyone to read.
 
