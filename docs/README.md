@@ -79,6 +79,8 @@ The user needs to place trust in the smart contract. To help make that less of a
 
 ## Fees
 
-Etherclear charges a small fee (currently 0.001 ETH, or $0.16 @ $160 / ETH) for each transaction. The fee pays for the relayer service, as well as other development and hosting costs.
+Etherclear charges a small fee  for each transaction, which consists of a constant base fee along with a variable payment fee that depends on the amount sent. The fee pays for the relayer service, as well as other development and hosting costs.
+
+Currently, the base fee is 0.001 ETH, or $0.25 @ $260 / ETH, and the payment fee is set at 0.5%.
 
 The fee doesn’t cover the cost of cancellations, because not every sender will cancel a payment.
